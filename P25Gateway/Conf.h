@@ -45,6 +45,7 @@ public:
   // The Log section
   std::string  getLogFilePath() const;
   std::string  getLogFileRoot() const;
+  bool         getLogUTC() const;
 
   // The Network section
   unsigned int getNetworkPort() const;
@@ -71,6 +72,7 @@ private:
 
   std::string  m_logFilePath;
   std::string  m_logFileRoot;
+  bool         m_logUTC;
 
   unsigned int m_networkPort;
   std::string  m_networkHosts1;

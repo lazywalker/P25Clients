@@ -123,6 +123,8 @@ bool CConf::read()
 			  m_logFilePath = value;
 		  else if (::strcmp(key, "FileRoot") == 0)
 			  m_logFileRoot = value;
+		  else if (::strcmp(key, "UTC") == 0)
+			  m_logUTC = ::atoi(value) == 1;
 	  } else if (section == SECTION_NETWORK) {
 		  if (::strcmp(key, "Port") == 0)
 			  m_networkPort = (unsigned int)::atoi(value);
@@ -198,6 +200,11 @@ std::string CConf::getLogFilePath() const
 std::string CConf::getLogFileRoot() const
 {
   return m_logFileRoot;
+}
+
+bool CConf::getLogUTC() const
+{
+  return m_logUTC;
 }
 
 unsigned int CConf::getNetworkPort() const
